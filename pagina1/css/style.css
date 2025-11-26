@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --azul: #2563eb;
+  --naranja: #f97316;
+  --azul-oscuro: #1e40af;
+  --azul-claro: #60a5fa;
+  --verde-suave: #34d399;
+  --blanco: #ffffff;
+  --gris: #f9fafb;
+  --texto: #1e293b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--blanco);
+  color: var(--texto);
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: linear-gradient(90deg, var(--azul), var(--naranja), var(--azul));
+  background-size: 500% 200%;
+  animation: gradientShift 10s ease infinite;
+  padding: 15px 0;
+  color: var(--blanco);
+  position: relative;
+  z-index: 10;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blanco);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.brand .logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+/* MENU + ICONOS */
+.menu-social-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav a.active {
+  color: var(--verde-suave);
+}
+
+/* ICONOS SIEMPRE VISIBLES */
+.nav-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.nav-icons img {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.nav-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* MENU HAMBURGUESA */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  color: var(--blanco);
+}
+
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 18px 20px 35px;
+  position: relative;
+  color: var(--blanco);
+  background: linear-gradient(90deg, var(--azul), var(--naranja), var(--azul));
+  background-size: 500% 200%;
+  animation: gradientShift 10s ease-in-out infinite;
+}
+
+.hero-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 12px auto 10px;
+  display: block;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
+  transition: transform 0.6s, filter 0.4s;
+}
+
+/* BOTÓN */
+.btn {
+  display: inline-block;
+  background: var(--azul-claro);
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--blanco);
+  color: var(--azul);
+  transform: scale(1.05);
+}
+
+/* DESTACADOS */
+.highlights {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(120deg, #f0f9ff, #e0f2fe, #ffffff);
+  background-size: 400% 400%;
+  animation: highlightsBG 15s ease infinite;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--azul-claro), var(--azul));
+  color: var(--blanco);
+  border-radius: 25px;
+  padding: 35px 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.5s ease;
+  border-left: 5px solid var(--verde-suave);
+  border-right: 5px solid var(--verde-suave);
+}
+
+.highlight:hover {
+  transform: translateY(-15px) scale(1.05);
+  background: linear-gradient(135deg, var(--azul-claro), var(--verde-suave));
+  border-left: 5px solid var(--blanco);
+  border-right: 5px solid var(--blanco);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #e2e8f0;
+  font-size: 0.95rem;
+  margin-top: 50px;
+}
+
+/* ANIMACIONES */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes highlightsBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  /* NAV colapsa completo, todos los enlaces visibles al abrir */
+  .nav {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(0,0,0,0.85);
+    padding: 10px 15px;
+    border-radius: 8px;
+    position: absolute;
+    right: 20px;
+    top: 55px;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+}

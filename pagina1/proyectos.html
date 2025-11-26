@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyectos Integradores - System Innovation</title>
+  <link rel="stylesheet" href="css/proyectos.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="brand">
+        <img src="img/L.E.jpg" alt="LOGO EMPRESA" class="logo" />
+        <span>SYSTEM INNOVATION</span>
+      </a>
+
+      <div class="social-icons">
+        <a href="https://wa.me/7229458731" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" alt="WhatsApp" />
+        </a>
+        <a href="https://www.facebook.com/share/19WJqsZgtz/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968764.png" alt="Facebook" />
+        </a>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="sobre.html">Sobre Nosotros</a>
+      <a href="proyectos.html" class="active">Proyectos</a>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content">
+    <section id="proyectos" class="proyectos-container"></section>
+  </main>
+
+  <!-- MODAL DE PROYECTOS -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+
+      <h2 id="modal-title"></h2>
+
+      <div class="img-gallery">
+        <span class="arrow left" id="prevImg">&#10094;</span>
+        <img id="modal-img" class="modal-img" src="" alt="">
+        <span class="arrow right" id="nextImg">&#10095;</span>
+      </div>
+
+      <p><strong>Descripción:</strong> <span id="modal-desc"></span></p>
+      <p><strong>Integrantes:</strong> <span id="modal-integrantes"></span></p>
+      <p><strong>Tecnologías:</strong> <span id="modal-tecnologias"></span></p>
+      <p><strong>Fecha:</strong> <span id="modal-fecha"></span></p>
+
+      <a id="modal-pdf" href="#" target="_blank" class="btn-pdf">Visualizar documento</a>
+    </div>
+  </div>
+
+  <!-- VIDEO MODAL -->
+  <div id="videoModal" class="video-modal">
+    <div class="video-container">
+      <span id="closeVideo" class="close-video">&times;</span>
+      <video id="introVideo" src="video/vii.mp4" controls autoplay></video>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© System Innovation - Proyectos Integradores.</p>
+  </footer>
+
+  <script src="proyectos.js"></script>
+</body>
+</html>
